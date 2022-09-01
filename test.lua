@@ -4,6 +4,10 @@ local COB = function(tab, argstable)
     return GuiLibrary["ObjectsThatCanBeSaved"][tab.."Window"]["Api"].CreateOptionsButton(argstable)
 end
 
+local players = game:GetService("Players")
+local lplr = players.LocalPlayer
+local workspace = game:GetService("Workspace")
+
 COB("Utility", {
     Name = "ClientCrasher",
     Function = function(callback) 
@@ -15,17 +19,6 @@ COB("Utility", {
     HoverText = "crash all lol"
 })
 
-COB("Utility", {
-    Name = "ProjectileExploit",
-    Function = function(callback) 
-        if callback then
-            pcall(function() 
-                shared.VapeFireProjectile(game.Players:GetPlayers()) 
-            end) 
-        end
-    end,
-    HoverText = "tps projeciles at everyone"
-})
 
 COB("Utility", {
     Name = "FunnyExploit",
